@@ -58,13 +58,13 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch, resource, memory_limiter, routing]
+      processors: [memory_limiter, resource, routing, batch]
       exporters: [otlp]
     metrics:
       receivers: [otlp]
-      processors: [batch, resourcedetection, memory_limiter]
+      processors: [memory_limiter, resourcedetection, batch]
       exporters: [otlp]
     logs:
       receivers: [otlp]
-      processors: [batch, attributes/example, memory_limiter]
+      processors: [memory_limiter, attributes/example, batch]
       exporters: [otlp]
