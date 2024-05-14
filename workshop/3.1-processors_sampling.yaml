@@ -200,13 +200,13 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch, memory_limiter, probabilistic_sampler, tail_sampling]
+      processors: [memory_limiter, probabilistic_sampler, tail_sampling, batch]
       exporters: [otlp]
     metrics:
       receivers: [otlp]
-      processors: [batch, memory_limiter]
+      processors: [memory_limiter, batch]
       exporters: [otlp]
     logs:
       receivers: [otlp]
-      processors: [batch, memory_limiter]
+      processors: [memory_limiter, batch]
       exporters: [otlp]

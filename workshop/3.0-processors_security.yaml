@@ -77,13 +77,13 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch, memory_limiter, filter/ottl, filter/spans]
+      processors: [memory_limiter, filter/ottl, filter/spans, batch]
       exporters: [otlp]
     metrics:
       receivers: [otlp]
-      processors: [batch, memory_limiter, filter/ottl, filter/dropempty]
+      processors: [memory_limiter, filter/ottl, filter/dropempty, batch]
       exporters: [otlp]
     logs:
       receivers: [otlp]
-      processors: [batch, memory_limiter, filter/ottl, filter/regexp, redaction]
+      processors: [memory_limiter, filter/ottl, filter/regexp, redaction, batch]
       exporters: [otlp]

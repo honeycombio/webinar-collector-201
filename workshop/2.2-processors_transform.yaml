@@ -119,13 +119,13 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch, memory_limiter, transform, transform/spanevents]
+      processors: [memory_limiter, transform, transform/spanevents, batch]
       exporters: [otlp]
     metrics:
       receivers: [otlp]
-      processors: [batch, memory_limiter, metricstransform, transform]
+      processors: [memory_limiter, metricstransform, transform, batch]
       exporters: [otlp]
     logs:
       receivers: [otlp]
-      processors: [batch, memory_limiter, logstransform, transform]
+      processors: [memory_limiter, logstransform, transform, batch]
       exporters: [otlp]
